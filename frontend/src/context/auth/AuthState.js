@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import AuthContext from './AuthContext';
 
-
 const AuthState = (props) => {
+    const [studInfo,setStudInfo] = useState({ name : "" , email : "", roll : ""});
     const url = "http://localhost:5001";
 
     const userLogin = async()=>{
@@ -26,6 +26,8 @@ const AuthState = (props) => {
         localStorage.setItem('studId',json.studInformation.mail);
         localStorage.setItem('studRoll',json.studInformation.surname);
         localStorage.setItem('studJob',json.studInformation.jobTitle);
+
+        setStudInfo({...studInfo, name : json.studInformation.givenName , roll : json.studInformation.surname , email : json.studInformation.mail});
     }
 
     const logOut=async()=>{
@@ -36,7 +38,7 @@ const AuthState = (props) => {
         window.location.href = logoutEndpoint;
     }
 
-    return (<AuthContext.Provider value={{ userLogin,getToken ,logOut }}>
+    return (<AuthContext.Provider value={{ userLogin,getToken ,logOut , studInfo ,setStudInfo}}>
                 {props.children}
             </AuthContext.Provider>)
 }
