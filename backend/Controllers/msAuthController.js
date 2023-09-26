@@ -28,7 +28,6 @@ const pca = new msal.PublicClientApplication(config);
 
 
 export const login = async (req, res) => {
-    console.log("1",clientSecret)
   const authCodeUrlParameters = {
     scopes: ['user.read'],
     redirectUri: `${process.env.FRONTENDURL}/main`,
@@ -45,7 +44,6 @@ export const getToken = async (req,res) => {
 
   const url = `https://login.microsoftonline.com/${tenantID}/oauth2/token`;
   const formData = new URLSearchParams();
-
   //formdata
   formData.append('client_id', clientID);
   formData.append('client_secret', clientSecret);
@@ -62,7 +60,6 @@ export const getToken = async (req,res) => {
     },
     body: formData.toString(),
   });
-  
 
   if (response.ok) {
     const data = await response.json();
@@ -86,7 +83,4 @@ export const getToken = async (req,res) => {
       throw new Error(await response2.text());
     }
     } 
-    else {
-      throw new Error(await response.text());
-    }
   };
