@@ -52,10 +52,10 @@ const HomePage = () => {
                 </div>
                 <div className='my-12 mx-12 '>
                     <div onClick={clickHandler}>
-                        <Card />
                     </div>
                 </div>
-    </div>
+                <Card />
+            </div>
         </div>
     )
 }
