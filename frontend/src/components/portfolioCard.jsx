@@ -8,7 +8,7 @@ import Code from './Code';
 import Preview from './Preview'
 import { Link, useNavigate } from 'react-router-dom';
 
-const  PortfolioCard=()=> {
+const PortfolioCard=()=> {
   const Navigate = useNavigate();
   
   const data = {
@@ -23,7 +23,7 @@ const  PortfolioCard=()=> {
       Address: "",
       Phone: "",
       Email: "",
-      Colour: "#bd5e38",
+      Colour: "#5538BC",
       Socials: {
         Facebook: "xyz",
         WhatsApp: "xyz",
@@ -65,18 +65,19 @@ const  PortfolioCard=()=> {
     Navigate('/main')
 }
 
-  //  const download = () => {
-  //   let output = he.decode(
-  //     document.getElementsByClassName("codefile")[0].innerHTML
-  //   );
-  //   const blob = new Blob([output]);
-  //   const fileDownloadUrl = URL.createObjectURL(blob);
-  //   setInitialState({ fileDownloadUrl: fileDownloadUrl }, () => {
-  //     // doFileDownload.click();
-  //     URL.revokeObjectURL(fileDownloadUrl);
-  //     setInitialState({ fileDownloadUrl: "" });
-  //   });
-  // };
+  const download = () => {
+    let output = he.decode(
+      document.getElementsByClassName("codefile")[0].innerHTML
+    );
+    const blob = new Blob([output]);
+    const fileDownloadUrl2 = URL.createObjectURL(blob);
+    setInitialState(prevState=>{
+      return {
+        ...prevState,
+        fileDownloadUrl:fileDownloadUrl2
+      };
+    });
+  };
   return (
     <div className="App w-full">
     <Header className={`bg-${initialState.Dark ? "white border-b-2" : "black"} text-${initialState.Dark ? "black" : "white"} flex justify-center h-12 items-center mb-8`} >
@@ -101,24 +102,25 @@ const  PortfolioCard=()=> {
           }}
           onChange={handleChange}
         />
-        <button
-          className={`btn btn-${initialState.Dark ? "success" : "primary"}`}
+        <a
+          className='text-xl cursor-pointer'
+          download={"portfolio.html"}
+          href={initialState.fileDownloadUrl}
+        >
+          <button
+          className={`btn btn-${initialState.Dark ? "success" : "primary"} bg-green-700 text-white mx-2 p-3`}
           onClick={() => {
-            // download();
+            download();
           }}
+          download={"portfolio.html"}
+          href={initialState.fileDownloadUrl}
           disabled={initialState.PreviewMode}
           title="Go to the Code View to download."
         >
-          {/* Download */}
-        </button>
-        <a
-          className="hidden"
-          download={"portfolio.html"}
-          href={initialState.fileDownloadUrl}
-          // ref={e => (this.doFileDownload = e)}
-        >
-          Download
+           Download
+            </button>
         </a>
+        
       </div>
       <div className="p-3 w-1/2">
         <ul className="flex">
