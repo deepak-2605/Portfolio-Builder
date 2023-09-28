@@ -11,7 +11,7 @@ const NewInterestForm = ({ interests=[], onCreatePressed }) =>{
     return(
     <div className="border rounded bg-light p-3 m-2">
             <input 
-                className="form-control form-control-sm mb-2 w-96"
+                className="form-control form-control-sm mb-2 w-96 border outline-gray-200 p-1"
                 type="text"
                 placeholder="Describe your interests in a few words..."
                 value={interest}
@@ -19,7 +19,7 @@ const NewInterestForm = ({ interests=[], onCreatePressed }) =>{
             />          
         <div className="text-right">
             <button 
-                className="btn btn-success btn-sm rounded-circle"
+                className="btn btn-success btn-sm rounded-circle rounded-full w-7 h-7 bg-green-400 text-white"
                 disabled={interest === ''}
                 onClick={()=>{
                     onCreatePressed({interest});

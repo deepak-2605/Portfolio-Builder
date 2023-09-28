@@ -53,8 +53,8 @@ const Form = ({ FormData, onChange }) => {
     ]
   };
   return (
-    <div className="Form my-9">
-      <h1 className="text-xl mb-2">Basic Info</h1>
+    <div className="Form">
+      <h1 className="text-xl mb-2 font-bold">Basic Info</h1>
       {Object.keys(FormData).map(
         fd =>
           Object.keys(Desc).includes(fd) && (
@@ -71,15 +71,15 @@ const Form = ({ FormData, onChange }) => {
             />
           )
       )}
-      <h3 className='my-5 mx-3'>Experience</h3>
+      <h3 className='mt-5 mb-2 mx-3'>Experience</h3>
       <ExperienceList />
-      <h3 className='my-5 mx-3'>Education</h3>
+      <h3 className='mt-5 mb-2 mx-3'>Education</h3>
       <EducationList />
-      <h3 className='my-5 mx-3'>Skills</h3>
+      <h3 className='mt-5 mb-2 mx-3'>Skills</h3>
       <SkillsList />
-      <h3 className='my-5 mx-3'>Interests</h3>
+      <h3 className='mt-5 mb-2 mx-3'>Interests</h3>
       <InterestList />
-      <h3 className='my-5 mx-3'>Awards</h3>
+      <h3 className='mt-5 mb-2 mx-3'>Awards</h3>
         <AwardList />
       </div>
     

@@ -14,11 +14,11 @@ const FormGroup = ({
   Desc
 }) => {
   return (
-    <div className="form-group my-3">
-      <label htmlFor={Id} className="text-xl block">{Label}</label>
+    <div className="form-group my-4 border p-2 rounded-md">
+      <label htmlFor={Id} className="text-sm block py-1 font-medium">{Label}</label>
       <input
         type={Type}
-        className="form-control block w-96"
+        className="form-control block w-96 border py-1 px-2 rounded-sm text-sm capitalize outline-gray-200"
         id={Id}
         name={Id}
         onChange={onChange}
@@ -31,7 +31,7 @@ const FormGroup = ({
         readOnly={readOnly}
       />
       {Desc && (
-        <small id={`${Id}-help`} className="text-gray-500">
+        <small id={`${Id}-help`} className="text-gray-500 text-xs">
           {Desc}
         </small>
       )}

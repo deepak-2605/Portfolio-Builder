@@ -72,18 +72,18 @@ const  PortfolioCard=()=> {
   // };
   return (
     <div className="App">
-    <Header className={`bg-${initialState.Dark ? "white" : "black"} text-${initialState.Dark ? "black" : "white"} p-0 my-0 flex justify-center h-12`} >
-    <h1 className='text-2xl text-center inline mx-11'>Portfolio Generator</h1>
+    <Header className={`bg-${initialState.Dark ? "white border-b-2" : "black"} text-${initialState.Dark ? "black" : "white"} flex justify-center h-12 items-center mb-8`} >
+    <h1 className='text-2xl text-center inline mx-6 my-0'>Portfolio Generator</h1>
     <button
       className={`btn btn-sm btn-outline-${initialState.Dark ? "primary" : "secondary"} rounded-full`}
       onClick={toggleHeader}
     >
     <i
-      className={`fa fa-${initialState.Dark ? "sun" : "moon"}-o`}
+      className={`fa fa-${initialState.Dark ? "sun" : "moon"}-o text-xl m-0`}
     ></i>
     </button>
   </Header>
-  <div className="container mx-auto my-5">
+  <div className="container ml-12 my-4">
     <div className="flex flex-row">
       <div className="p-3 w-1/2">
         <Form
