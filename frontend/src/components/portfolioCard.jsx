@@ -6,8 +6,11 @@ import Header from "./Bootstrap/Header";
 import Split from "react-split";
 import Code from './Code';
 import Preview from './Preview'
+import { Link, useNavigate } from 'react-router-dom';
 
 const  PortfolioCard=()=> {
+  const Navigate = useNavigate();
+  
   const data = {
     Dark: true,
     FormData: {
@@ -58,6 +61,10 @@ const  PortfolioCard=()=> {
     });
   };
 
+  const clickHandler = async () => {
+    Navigate('/main')
+}
+
   //  const download = () => {
   //   let output = he.decode(
   //     document.getElementsByClassName("codefile")[0].innerHTML
@@ -71,7 +78,7 @@ const  PortfolioCard=()=> {
   //   });
   // };
   return (
-    <div className="App">
+    <div className="App w-full">
     <Header className={`bg-${initialState.Dark ? "white border-b-2" : "black"} text-${initialState.Dark ? "black" : "white"} flex justify-center h-12 items-center mb-8`} >
     <h1 className='text-2xl text-center inline mx-6 my-0'>Portfolio Generator</h1>
     <button
@@ -83,7 +90,8 @@ const  PortfolioCard=()=> {
     ></i>
     </button>
   </Header>
-  <div className="container ml-12 my-4">
+  <Link className='pl-4 text-xl font-medium text-blue-500 cursor-pointer' to={'/'}>Home</Link>
+  <div className="container pl-12 my-4">
     <div className="flex flex-row">
       <div className="p-3 w-1/2">
         <Form

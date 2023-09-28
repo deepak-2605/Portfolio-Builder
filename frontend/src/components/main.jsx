@@ -2,7 +2,7 @@ import React , { useContext,useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import AuthContext from '../context/auth/AuthContext';
 import { useSearchParams } from 'react-router-dom';
-import Card from './portfolioCard';
+import Card from './navigateCard';
 
 const HomePage = () => {
     const { getToken , logOut ,studInfo ,setStudInfo} = useContext(AuthContext);
@@ -52,9 +52,10 @@ const HomePage = () => {
                 </div>
                 <div className='my-12 mx-12 '>
                     <div onClick={clickHandler}>
+                    <Card />
                     </div>
                 </div>
-                <Card />
+                
             </div>
         </div>
     )
