@@ -3,7 +3,7 @@ Portfolio Builder is a user-friendly React-based application that empowers users
 
 ## Getting Started
 
-Before you can start contributing to CollegeCupid, you need to set up your development environment. Follow these steps to get started:
+Before you can start contributing to PortfolioBuilder, you need to set up your development environment. Follow these steps to get started:
 
 ### Prerequisites
 
