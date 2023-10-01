@@ -42,14 +42,15 @@ Before you can start contributing to CollegeCupid, you need to set up your devel
 
 1. You can now run the app  using the following command:
 
-  ```bash
+   ```bash
    cd frontend
    npm start
    ```
-  ```bash
+     ```bash
    cd backend
    npm start
    ```
+   
 
 ## Contributing
 
